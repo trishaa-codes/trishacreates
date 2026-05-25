@@ -3,7 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TrishaCreates — Websites that elevate brands</title>
+  <title>TrishaCreates — CS student exploring design & AI</title>
+  <meta name="description" content="TrishaCreates — a computer science student learning, building creative projects, and sharing the journey in web design and AI." />
+  <meta name="theme-color" content="#faf6f1" />
+  <meta name="author" content="TrishaCreates" />
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="TrishaCreates — CS student exploring design & AI" />
+  <meta property="og:description" content="Learning, building creative projects, and sharing my journey in web design and AI." />
+  <meta property="og:site_name" content="TrishaCreates" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="TrishaCreates — CS student exploring design & AI" />
+  <meta name="twitter:description" content="Learning, building creative projects, and sharing my journey in web design and AI." />
+
+  <!-- Inline SVG favicon (blush "T" monogram) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23e8bfb0'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-size='38' font-style='italic' fill='%23ffffff'%3ET%3C/text%3E%3C/svg%3E" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -314,19 +330,163 @@
       display: flex; gap: 2.5rem;
       margin-top: 2.5rem;
     }
-    .stat-item { }
-    .stat-num {
-      font-family: var(--serif);
-      font-size: 2.2rem;
-      font-weight: 500;
-      color: var(--rose);
-      line-height: 1;
+
+    /* ─── ABOUT FOCUS CHIPS ──────────────────── */
+    .about-focus {
+      display: flex; flex-wrap: wrap; gap: .55rem;
+      margin-top: 2rem;
     }
-    .stat-label {
+    .focus-chip {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 99px;
+      padding: .5rem 1.05rem;
+      font-size: .78rem;
+      font-weight: 500;
+      color: var(--brown);
+      letter-spacing: .02em;
+      box-shadow: 0 2px 10px rgba(90,55,35,.05);
+      transition: transform .25s, border-color .25s, color .25s;
+    }
+    .focus-chip:hover {
+      transform: translateY(-2px);
+      border-color: var(--blush);
+      color: var(--rose);
+    }
+
+    /* ─── CURRENTLY EXPLORING ────────────────── */
+    #exploring {
+      background: var(--cream);
+      position: relative;
+      overflow: hidden;
+    }
+    #exploring::before {
+      content: '';
+      position: absolute;
+      width: 380px; height: 380px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,191,176,.28) 0%, transparent 70%);
+      bottom: -120px; left: -120px;
+      pointer-events: none;
+    }
+    .exploring-inner {
+      max-width: 1100px; margin: 0 auto;
+      position: relative;
+    }
+    .exploring-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      margin-top: 3rem;
+    }
+    .explore-card {
+      background: var(--card-bg);
+      border: 1px dashed var(--blush);
+      border-radius: var(--radius);
+      padding: 1.7rem 1.5rem;
+      position: relative;
+      transition: transform var(--transition), box-shadow var(--transition), border-style .3s, border-color .3s;
+    }
+    .explore-card:hover {
+      transform: translateY(-4px);
+      border-style: solid;
+      border-color: var(--rose);
+      box-shadow: var(--shadow);
+    }
+    .explore-pulse {
+      position: absolute;
+      top: 1.2rem; right: 1.2rem;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--rose);
+      animation: pulse 2s infinite;
+    }
+    .explore-icon {
+      font-size: 1.4rem;
+      margin-bottom: .8rem;
+    }
+    .explore-name {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--brown);
+      margin-bottom: .3rem;
+    }
+    .explore-tag {
+      font-size: .72rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ─── GROWING / PORTFOLIO NOTICE ─────────── */
+    #growing {
+      background: var(--beige);
+      text-align: center;
+      padding: 5rem 6vw;
+    }
+    .growing-card {
+      max-width: 640px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 3rem 2rem;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .growing-card::before {
+      content: '';
+      position: absolute;
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,191,176,.35) 0%, transparent 70%);
+      top: -120px; right: -120px;
+      pointer-events: none;
+    }
+    .growing-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+      animation: floatA 4s ease-in-out infinite;
+    }
+    .growing-text {
+      font-family: var(--serif);
+      font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+      font-weight: 400;
+      color: var(--brown);
+      line-height: 1.5;
+      font-style: italic;
+    }
+    .growing-sub {
+      font-size: .85rem;
+      color: var(--muted);
+      margin-top: .8rem;
+      letter-spacing: .03em;
+    }
+
+    /* ─── CONCEPT BADGE ON PROJECTS ──────────── */
+    .concept-badge {
+      position: absolute;
+      top: 1rem; right: 1rem;
+      background: rgba(92,61,46,.85);
+      backdrop-filter: blur(8px);
+      color: var(--cream);
+      border-radius: 99px;
+      padding: .3rem .85rem;
+      font-size: .68rem;
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .project-meta {
+      margin-top: 1.5rem;
+      display: inline-flex; align-items: center; gap: .4rem;
       font-size: .78rem;
       color: var(--muted);
-      letter-spacing: .06em;
-      margin-top: .25rem;
+      letter-spacing: .04em;
+      font-style: italic;
     }
 
     /* ─── SERVICES ───────────────────────────── */
@@ -471,71 +631,6 @@
       transition: gap .2s;
     }
     .project-link:hover { gap: .7rem; }
-
-    /* ─── TESTIMONIALS ───────────────────────── */
-    #testimonials { background: var(--cream); }
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin-top: 3.5rem;
-      max-width: 1100px;
-    }
-    .testi-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 2.2rem;
-      position: relative;
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-    .testi-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
-    .testi-quote {
-      font-family: var(--serif);
-      font-size: 3rem;
-      color: var(--blush);
-      line-height: 1;
-      margin-bottom: .5rem;
-    }
-    .testi-text {
-      font-size: .92rem;
-      color: var(--muted);
-      line-height: 1.8;
-      font-weight: 300;
-      font-style: italic;
-    }
-    .testi-author {
-      display: flex; align-items: center; gap: .9rem;
-      margin-top: 1.5rem;
-    }
-    .testi-avatar {
-      width: 42px; height: 42px;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--serif);
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: var(--white);
-      flex-shrink: 0;
-    }
-    .av1 { background: linear-gradient(135deg, #c9806a, #8b4f3f); }
-    .av2 { background: linear-gradient(135deg, #b8927a, #6b5235); }
-    .av3 { background: linear-gradient(135deg, #d4956f, #a0663a); }
-    .testi-name {
-      font-weight: 500;
-      font-size: .88rem;
-      color: var(--brown);
-    }
-    .testi-role {
-      font-size: .75rem;
-      color: var(--muted);
-    }
-    .stars {
-      color: var(--rose);
-      font-size: .85rem;
-      letter-spacing: .05em;
-      margin-bottom: 1rem;
-    }
 
     /* ─── CONTACT ────────────────────────────── */
     #contact {
@@ -717,8 +812,8 @@
   <ul class="nav-links" id="navLinks">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
+    <li><a href="#exploring">Exploring</a></li>
     <li><a href="#projects">Projects</a></li>
-    <li><a href="#testimonials">Testimonials</a></li>
     <li><a href="#contact" class="nav-cta">Work With Me</a></li>
   </ul>
   <div class="hamburger" id="hamburger" onclick="toggleMenu()">
@@ -731,14 +826,14 @@
   <div class="hero-bg-circle c1"></div>
   <div class="hero-bg-circle c2"></div>
 
-  <div class="hero-badge">✦ Available for new projects</div>
+  <div class="hero-badge">&#10022; Open to creative projects</div>
 
   <h1 class="hero-h1">
-    Building modern websites<br>that <em>elevate</em> brands.
+    CS Student Exploring<br><em>Design &amp; AI</em>
   </h1>
 
   <p class="hero-sub">
-    I create aesthetic and high-converting websites for businesses, creators and brands.
+    I'm learning, building creative projects, and sharing my journey in web design and AI.
   </p>
 
   <div class="hero-btns">
@@ -767,23 +862,15 @@
 
     <div class="about-content reveal">
       <span class="section-label">About Me</span>
-      <h2 class="section-title">The creative<br>behind the brand</h2>
+      <h2 class="section-title">Hi, I'm Trisha &mdash;<br>a student & creator</h2>
       <p>
-        Hi! I'm TrishaCreates. I create modern and aesthetic websites for businesses and creators. I also explore AI tools and digital resources that make creating easier. My goal is to build websites that look beautiful and help brands grow online.
+        I'm a computer science student who enjoys creating aesthetic websites and experimenting with AI projects.
       </p>
-      <div class="about-stats">
-        <div class="stat-item">
-          <div class="stat-num">30+</div>
-          <div class="stat-label">Projects done</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">100%</div>
-          <div class="stat-label">Client satisfaction</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">2+</div>
-          <div class="stat-label">Years creating</div>
-        </div>
+      <div class="about-focus">
+        <span class="focus-chip">&#10022; Website Design</span>
+        <span class="focus-chip">&#10022; AI Tools</span>
+        <span class="focus-chip">&#10022; Creative Projects</span>
+        <span class="focus-chip">&#10022; Learning &amp; Building</span>
       </div>
     </div>
   </div>
@@ -792,39 +879,73 @@
 <!-- SERVICES -->
 <section id="services">
   <div style="max-width:1100px">
-    <span class="section-label reveal">What I Offer</span>
-    <h2 class="section-title reveal">Services designed<br>to <em>elevate</em> you</h2>
+    <span class="section-label reveal">What I Do</span>
+    <h2 class="section-title reveal">Things I'm<br><em>working on</em></h2>
 
     <div class="services-grid">
 
       <div class="service-card reveal">
         <div class="service-icon">🎨</div>
-        <div class="service-name">Website Designing</div>
-        <p class="service-desc">Custom, beautiful websites that reflect your brand identity and leave a lasting impression on every visitor.</p>
-      </div>
-
-      <div class="service-card reveal">
-        <div class="service-icon">💼</div>
-        <div class="service-name">Business Websites</div>
-        <p class="service-desc">Professional, conversion-focused websites that establish credibility and grow your business online.</p>
-      </div>
-
-      <div class="service-card reveal">
-        <div class="service-icon">🚀</div>
-        <div class="service-name">Landing Pages</div>
-        <p class="service-desc">High-converting landing pages crafted to capture leads, showcase offers, and drive meaningful action.</p>
-      </div>
-
-      <div class="service-card reveal">
-        <div class="service-icon">✨</div>
-        <div class="service-name">Portfolio Websites</div>
-        <p class="service-desc">Elegant portfolio sites that put your best work front and centre and attract your dream clients.</p>
+        <div class="service-name">Website Design</div>
+        <p class="service-desc">Designing aesthetic websites with clean layouts, soft palettes and thoughtful little details.</p>
       </div>
 
       <div class="service-card reveal">
         <div class="service-icon">🤖</div>
-        <div class="service-name">AI Tools & Resources</div>
-        <p class="service-desc">Curated AI tools and digital resources that make building, creating, and running your brand simpler and smarter.</p>
+        <div class="service-name">AI Tools</div>
+        <p class="service-desc">Experimenting with AI tools to make creating, designing and building feel easier and more fun.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">✨</div>
+        <div class="service-name">Creative Projects</div>
+        <p class="service-desc">Building small creative projects that mix design, code and a bit of personal style.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">📚</div>
+        <div class="service-name">Learning &amp; Building</div>
+        <p class="service-desc">Growing my skills, picking up new tools, and sharing the things I make along the way.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CURRENTLY EXPLORING -->
+<section id="exploring">
+  <div class="exploring-inner">
+    <span class="section-label reveal">Currently Exploring</span>
+    <h2 class="section-title reveal">What I'm learning<br>and <em>building</em></h2>
+
+    <div class="exploring-grid">
+
+      <div class="explore-card reveal">
+        <div class="explore-pulse"></div>
+        <div class="explore-icon">🎨</div>
+        <div class="explore-name">Website Design</div>
+        <div class="explore-tag">In progress</div>
+      </div>
+
+      <div class="explore-card reveal">
+        <div class="explore-pulse"></div>
+        <div class="explore-icon">🤖</div>
+        <div class="explore-name">AI Tools</div>
+        <div class="explore-tag">Exploring</div>
+      </div>
+
+      <div class="explore-card reveal">
+        <div class="explore-pulse"></div>
+        <div class="explore-icon">✨</div>
+        <div class="explore-name">Creative Digital Projects</div>
+        <div class="explore-tag">Building</div>
+      </div>
+
+      <div class="explore-card reveal">
+        <div class="explore-pulse"></div>
+        <div class="explore-icon">📚</div>
+        <div class="explore-name">Learning &amp; Building</div>
+        <div class="explore-tag">Always</div>
       </div>
 
     </div>
@@ -835,7 +956,7 @@
 <section id="projects">
   <div style="max-width:1100px">
     <span class="section-label reveal">Featured Work</span>
-    <h2 class="section-title reveal">Projects I'm<br><em>proud</em> of</h2>
+    <h2 class="section-title reveal">A few <em>concept</em><br>projects I've designed</h2>
 
     <div class="projects-grid">
 
@@ -852,16 +973,17 @@
             </div>
           </div>
           <span class="thumb-tag">Beauty & Wellness</span>
+          <span class="concept-badge">Concept</span>
         </div>
         <div class="project-body">
           <div class="project-name">Glow Beauty Studio</div>
-          <div class="project-tagline">Luxury beauty salon website</div>
+          <div class="project-tagline">Sample salon website concept</div>
           <div class="project-features">
             <span class="feat-chip">Booking Page</span>
             <span class="feat-chip">Services Section</span>
             <span class="feat-chip">Testimonials</span>
           </div>
-          <a href="#contact" class="project-link">View Case Study →</a>
+          <div class="project-meta">&#10022; Concept &middot; Designed by me</div>
         </div>
       </div>
 
@@ -879,16 +1001,17 @@
             </div>
           </div>
           <span class="thumb-tag">Food & Hospitality</span>
+          <span class="concept-badge">Concept</span>
         </div>
         <div class="project-body">
           <div class="project-name">Brew Haven Cafe</div>
-          <div class="project-tagline">Modern cafe website</div>
+          <div class="project-tagline">Sample cafe website concept</div>
           <div class="project-features">
             <span class="feat-chip">Menu</span>
             <span class="feat-chip">Gallery</span>
             <span class="feat-chip">Location Page</span>
           </div>
-          <a href="#contact" class="project-link">View Case Study →</a>
+          <div class="project-meta">&#10022; Concept &middot; Designed by me</div>
         </div>
       </div>
 
@@ -906,16 +1029,17 @@
             </div>
           </div>
           <span class="thumb-tag">Fashion & Lifestyle</span>
+          <span class="concept-badge">Concept</span>
         </div>
         <div class="project-body">
           <div class="project-name">Aura Fashion</div>
-          <div class="project-tagline">Fashion brand website</div>
+          <div class="project-tagline">Sample fashion brand concept</div>
           <div class="project-features">
             <span class="feat-chip">Product Showcase</span>
             <span class="feat-chip">Collections</span>
             <span class="feat-chip">Contact</span>
           </div>
-          <a href="#contact" class="project-link">View Case Study →</a>
+          <div class="project-meta">&#10022; Concept &middot; Designed by me</div>
         </div>
       </div>
 
@@ -923,54 +1047,12 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-  <div style="max-width:1100px">
-    <span class="section-label reveal">Kind Words</span>
-    <h2 class="section-title reveal">What clients<br><em>say</em> about working with me</h2>
-
-    <div class="testimonials-grid">
-
-      <div class="testi-card reveal">
-        <div class="stars">★★★★★</div>
-        <div class="testi-quote">"</div>
-        <p class="testi-text">Trisha completely transformed our online presence. The website she built for Glow Beauty Studio is absolutely stunning — our clients keep complimenting it and bookings have gone up significantly.</p>
-        <div class="testi-author">
-          <div class="testi-avatar av1">S</div>
-          <div>
-            <div class="testi-name">Sophia Reyes</div>
-            <div class="testi-role">Owner, Glow Beauty Studio</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testi-card reveal">
-        <div class="stars">★★★★★</div>
-        <div class="testi-quote">"</div>
-        <p class="testi-text">Working with TrishaCreates was an absolute dream. She understood our cafe's vibe perfectly and delivered a website that feels so on-brand. The gallery and menu sections are exactly what we envisioned.</p>
-        <div class="testi-author">
-          <div class="testi-avatar av2">M</div>
-          <div>
-            <div class="testi-name">Marcus Lin</div>
-            <div class="testi-role">Founder, Brew Haven Cafe</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testi-card reveal">
-        <div class="stars">★★★★★</div>
-        <div class="testi-quote">"</div>
-        <p class="testi-text">Trisha has a rare gift for blending aesthetics with function. Our Aura Fashion site looks editorial and luxury while being super easy to navigate. I'd recommend her to every brand owner out there.</p>
-        <div class="testi-author">
-          <div class="testi-avatar av3">I</div>
-          <div>
-            <div class="testi-name">Isabelle Fontaine</div>
-            <div class="testi-role">Creative Director, Aura Fashion</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
+<!-- PORTFOLIO GROWING -->
+<section id="growing">
+  <div class="growing-card reveal">
+    <div class="growing-icon">&#10024;</div>
+    <p class="growing-text">Portfolio currently growing &mdash; exciting projects coming soon.</p>
+    <p class="growing-sub">If you'd like to be one of them, I'd love to hear from you.</p>
   </div>
 </section>
 
@@ -1000,7 +1082,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">TrishaCreates</div>
-  <div class="footer-copy">TrishaCreates &nbsp;|&nbsp; Website Designing &nbsp;|&nbsp; AI Tools &nbsp;|&nbsp; © 2025</div>
+  <div class="footer-copy">TrishaCreates &nbsp;|&nbsp; Website Design &nbsp;|&nbsp; AI Tools &nbsp;|&nbsp; © 2025</div>
   <div class="footer-links">
     <a href="#about">About</a>
     <a href="#services">Services</a>
@@ -1042,7 +1124,7 @@
   revealEls.forEach(el => observer.observe(el));
 
   /* ── STAGGER SERVICE CARDS ── */
-  document.querySelectorAll('.service-card, .project-card, .testi-card').forEach((el, i) => {
+  document.querySelectorAll('.service-card, .project-card, .explore-card').forEach((el, i) => {
     el.style.transitionDelay = `${i * 0.08}s`;
   });
 
